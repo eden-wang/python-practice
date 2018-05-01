@@ -6,6 +6,11 @@ print("Calculate divisors of a number(https://www.practicepython.org/exercise/20
 num = input("Input a number: ")
 num = int(num)
 
-for i in range(2, ceil(sqrt(num))):
+# notice: range(2, 5) equals list [2, 3, 4] and 5 is not included
+i = 0
+for i in range(2, int(sqrt(num))):
     if num % i == 0:
-        print(str(i) + " " + str(int(num / i)))
+        print(i, int(num / i))  # divisor doesn't equal result
+# divisor equals result
+if (i + 1) == sqrt(num):
+    print(i + 1)
